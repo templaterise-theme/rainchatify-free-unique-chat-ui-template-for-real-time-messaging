@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>RainChatify</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <div class="RainChatify-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <div class="logo"><i class="fa-solid fa-comment"></i></div>
+                <div class="sidebar-actions">
+                    <ul>
+                        <li>
+                            <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                        <li><i class="fas fa-circle-notch" id="Status" title="Status"></i></li>
+                        <li><i class="fas fa-ellipsis-v" id="SettingControl" title="Menu"></i></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Search -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="search-input" placeholder="Search or start new chat">
+                </div>
+            </div>
+
+            <!-- Chat List -->
+            <div class="chat-list">
+                <div class="chat-item" data-name="John Doe" data-avatar="JD" data-status="Online" data-gradient="#ff6b6b, #feca57">
+                    <div class="chat-avatar-container">
+                        <div class="chat-avatar">JD</div>
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">John Doe</div>
+                            <div class="chat-time">2:30 PM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Hey! How are you doing? 😊</div>
+                            <div class="unread-count">3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Sarah Wilson" data-avatar="SW" data-status="Last seen today at 1:45 PM" data-gradient="#e74c3c, #f39c12">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #e74c3c, #f39c12);">SW</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Sarah Wilson</div>
+                            <div class="chat-time">1:45 PM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Thanks for the help earlier!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Jodan" data-avatar="JD" data-status="Last seen today at 1:45 PM" data-gradient="#e74c3c, #f39c12">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #e74c3c, #f39c12);">JD</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Jodan</div>
+                            <div class="chat-time">1:45 PM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Thanks for the help earlier!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Sara Ali" data-avatar="SA" data-status="Last seen today at 1:45 PM" data-gradient="#e74c3c, #f39c12">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #e74c3c, #f39c12);">SA</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Sara Ali</div>
+                            <div class="chat-time">1:45 PM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Thanks for the help earlier!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Team Group" data-avatar="TG" data-status="5 members" data-gradient="#9b59b6, #3498db">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #9b59b6, #3498db);">TG</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Team Group</div>
+                            <div class="chat-time">12:30 PM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Mike: Let's schedule the meeting</div>
+                            <div class="unread-count">7</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Alex Johnson" data-avatar="AJ" data-status="Last seen yesterday at 11:20 PM" data-gradient="#1abc9c, #16a085">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #1abc9c, #16a085);">AJ</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Alex Johnson</div>
+                            <div class="chat-time">Yesterday</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Perfect! See you tomorrow 👍</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Emma Davis" data-avatar="ED" data-status="Last seen 2 days ago" data-gradient="#f1c40f, #f39c12">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #f1c40f, #f39c12);">ED</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Emma Davis</div>
+                            <div class="chat-time">2 days ago</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Can you send me the documents?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Family Group" data-avatar="FG" data-status="8 members" data-gradient="#e67e22, #d35400">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #e67e22, #d35400);">FG</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Family Group</div>
+                            <div class="chat-time">3 days ago</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Mom: Don't forget dinner on Sunday!</div>
+                            <div class="unread-count">2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Mike Chen" data-avatar="MC" data-status="Last seen 5 hours ago" data-gradient="#2ecc71, #27ae60">
+                    <div class="chat-avatar" style="background: linear-gradient(45deg, #2ecc71, #27ae60);">MC</div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Mike Chen</div>
+                            <div class="chat-time">10:15 AM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Great work on the presentation!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-item" data-name="Lisa Park" data-avatar="LP" data-status="Online" data-gradient="#8e44ad, #9b59b6">
+                    <div class="chat-avatar-container">
+                        <div class="chat-avatar" style="background: linear-gradient(45deg, #8e44ad, #9b59b6);">LP</div>
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="chat-info">
+                        <div class="chat-header-info">
+                            <div class="chat-name">Lisa Park</div>
+                            <div class="chat-time">9:45 AM</div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="last-message">Let's catch up soon! 🎨</div>
+                            <div class="unread-count">1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="main-chat" id="mainChat">
+            <!-- Welcome Screen (shown when no chat is selected) -->
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-logo">
+                    <i class="fa-solid fa-comment"></i>
+                </div>
+                <h1 class="welcome-title">RainChatify</h1>
+                <p class="welcome-subtitle">
+                    Select one of the chats to start messaging.
+                </p>
+            </div>
+
+            <!-- Chat Interface (hidden by default) -->
+            <div class="chat-interface" id="chatInterface" style="display: none; flex-direction: column; height: 100%;">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-user-info">
+
+                        <i class="fas fa-arrow-left back-btn" id="backBtn" title="Back"></i>
+                        <div class="chat-user-avatar" id="chatAvatar">JD</div>
+                        <div class="chat-user-details">
+                            <h3 id="chatName">John Doe</h3>
+                            <div class="chat-user-status" id="chatStatus">Online</div>
+                        </div>
+                    </div>
+                    <div class="chat-header-actions">
+                        <ul class="communication-action">
+                            <li><i class="fas fa-phone" onclick="startAudioCall()" title="Audio call"></i></li>
+                            <li><i class="fas fa-video"  onclick="startVideoCall()" title="Video call"></i></li>
+                            <li><i class="fas fa-phone-volume" onclick="showCallHistory()" title="Call history"></i></li>
+                        </ul>
+                        <ul>
+                            <li><i class="fas fa-search" id="searchToggleBtn" title="Search in chat"></i></li>
+                            <li><i class="fas fa-ellipsis-v" id="chatMenuBtn" title="Menu"></i>
+                              <!-- Chat Menu Dropdown -->
+                                <div class="dropdown-menu" id="chatDropdownMenu">
+                                    <div class="dropdown-item" id="clearChatBtn">
+                                        <i class="fas fa-broom"></i>
+                                        Clear chat
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-item danger" id="closeChatBtn">
+                                        <i class="fas fa-times-circle"></i>
+                                        Close chat
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Chat Search Container -->
+                <div class="chat-search-container" id="chatSearchContainer">
+                    <div class="chat-search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="chat-search-input" id="chatSearchInput" placeholder="Search messages">
+                    </div>
+                    <div class="search-navigation">
+                        <div class="search-count" id="searchCount">0 of 0</div>
+                        <button class="search-nav-btn" id="prevSearchBtn">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                        <button class="search-nav-btn" id="nextSearchBtn">
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <button class="close-search-btn" id="closeSearchBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <!-- Reply Bar -->
+                <div class="reply-bar" id="replyBar">
+                    <div class="reply-bar-header">
+                        <div class="reply-bar-title">Replying to <span id="replyToName"></span></div>
+                        <button class="reply-bar-close" id="replyBarClose">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="reply-bar-content" id="replyBarContent"></div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message received" data-message-id="1">
+                        <div class="message-bubble">
+                            <div class="message-content">Hey! How are you doing today? 😊</div>
+                            <div class="message-time">2:30 PM</div>
+                         <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                         </div>
+                        </div>
+                       
+                    </div>
+
+                    <div class="message sent" data-message-id="2">
+                        <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="message-bubble">
+                            <div class="message-content">I'm doing great! Just working on some new projects. How about you?</div>
+                            <div class="message-time">
+                                2:32 PM
+                                <i class="fas fa-check-double message-status"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="message received" data-message-id="3">
+                        <div class="message-bubble">
+                            <div class="message-content">That sounds awesome! I'd love to hear more about your projects sometime. 🚀</div>
+                            <div class="message-time">2:33 PM</div>
+                            <div class="message-reactions">
+                                <div class="reaction">
+                                    <span class="reaction-emoji">👍</span>
+                                    <span class="reaction-count">1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="message sent" data-message-id="4">
+                        <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="message-bubble">
+                            <div class="message-content">Let's catch up over coffee this weekend? ☕</div>
+                            <div class="message-time">
+                                2:35 PM
+                                <i class="fas fa-check-double message-status"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="message received" data-message-id="5">
+                        <div class="message-bubble">
+                            <div class="message-content">Perfect! Saturday works for me. Looking forward to it! 🎉</div>
+                            <div class="message-time">2:36 PM</div>
+                        </div>
+                        <div class="message-actions">
+                            <div class="message-actions-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Typing Indicator -->
+                    <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                        <span class="typing-text">typing</span>
+                        <div class="typing-dots">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <div class="input-actions">
+                        <i class="fas fa-smile emoji-btn" title="Emoji"></i>
+                        <label for="fileInput" style="cursor: pointer;">
+                            <i class="fas fa-paperclip" title="Attach File"></i>
+                        </label>
+                        <input type="file" id="fileInput" class="file-input" multiple accept="*/*">
+                    </div>
+                    <div class="message-input-wrapper">
+                        <input type="text" class="message-input" placeholder="Type a message" id="messageInput">
+                    </div>
+                    <button class="send-btn" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div class="context-menu" id="contextMenu">
+        <div class="context-menu-item" id="replyOption">
+            <i class="fas fa-reply"></i>
+            Reply
+        </div>
+        <div class="context-menu-item" id="editOption">
+            <i class="fas fa-edit"></i>
+            Edit
+        </div>
+        <div class="context-menu-item" id="copyOption">
+            <i class="fas fa-copy"></i>
+            Copy
+        </div>
+        <div class="context-menu-item danger" id="deleteOption">
+            <i class="fas fa-trash"></i>
+            Delete
+        </div>
+    </div>
+
+    <!-- Clear Chat Modal -->
+    <div class="modal-overlay" id="clearChatModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-icon warning">
+                    <i class="fas fa-broom"></i>
+                </div>
+                <div class="modal-title">Clear Chat</div>
+            </div>
+            <div class="modal-content">
+                Are you sure you want to clear all messages in this chat? This action cannot be undone.
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" id="clearChatCancel">Cancel</button>
+                <button class="modal-btn confirm" id="clearChatConfirm">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Close Chat Modal -->
+    <div class="modal-overlay" id="closeChatModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-icon danger">
+                    <i class="fas fa-times-circle"></i>
+                </div>
+                <div class="modal-title">Close Chat</div>
+            </div>
+            <div class="modal-content">
+                Are you sure you want to close this chat? You'll return to the main screen.
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" id="closeChatCancel">Cancel</button>
+                <button class="modal-btn confirm" id="closeChatConfirm">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal-overlay" id="profileModal">
+        <div class="profile-modal">
+            <div class="profile-modal-header">
+                <button class="profile-back-btn" id="profileBackBtn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h3>Contact Info</h3>
+                <button class="profile-close-btn" id="profileCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="profile-modal-content" id="profileContent">
+                <!-- Profile content will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- User Settings Modal -->
+    <div class="modal-overlay" id="userSettingsModal">
+        <div class="settings-modal">
+            <div class="settings-modal-header">
+                <button class="settings-back-btn" id="settingsBackBtn">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <h3>Settings</h3>
+                <button class="settings-close-btn" id="settingsCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="settings-modal-content" id="settingsContent">
+                <!-- Settings content will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+<!-- Edit Profile Modal -->
+<div class="modal-overlay" id="editProfileModal">
+    <div class="edit-profile-modal">
+        <div class="edit-profile-header">
+            <button class="edit-profile-back-btn" id="editProfileBackBtn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h3>Profile</h3>
+            <button class="edit-profile-save-btn" id="editProfileSaveBtn">Save</button>
+        </div>
+        <div class="edit-profile-content" id="editProfileContent">
+            <!-- Edit profile content will be loaded here -->
+        </div>
+    </div>
+</div>
+
+<!-- Status Modal -->
+<div class="modal-overlay" id="statusModal">
+    <div class="status-modal">
+        <div class="status-modal-header">
+            <button class="status-back-btn" id="statusBackBtn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h3>Status</h3>
+            <button class="status-close-btn" id="statusCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="status-modal-content" id="statusContent">
+            <!-- Status content will be loaded here dynamically -->
+        </div>
+    </div>
+</div>
+
+<!-- Status Viewer Modal -->
+<div class="modal-overlay" id="statusViewerModal">
+    <div class="status-viewer">
+        <div class="status-viewer-header">
+            <button class="status-viewer-close" id="statusViewerClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="status-viewer-info">
+                <div class="status-viewer-avatar" id="statusViewerAvatar"></div>
+                <div class="status-viewer-details">
+                    <div class="status-viewer-name" id="statusViewerName"></div>
+                    <div class="status-viewer-time" id="statusViewerTime"></div>
+                </div>
+            </div>
+            <div class="status-viewer-actions">
+                <button class="status-action-btn" id="muteStatusBtn">
+                    <i class="fas fa-volume-mute"></i>
+                </button>
+                <button class="status-action-btn" id="moreStatusBtn">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div>
+        </div>
+        <div class="status-progress-container">
+            <div class="status-progress-bars" id="statusProgressBars"></div>
+        </div>
+        <div class="status-viewer-content" id="statusViewerContent">
+            <!-- Status content will be displayed here -->
+        </div>
+        <div class="status-viewer-controls">
+            <button class="status-control-btn" id="prevStatusBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="status-control-btn" id="nextStatusBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="status-reply-container">
+            <div class="status-reply-input">
+                <input type="text" placeholder="Reply to status..." id="statusReplyInput">
+                <button class="status-reply-btn" id="statusReplyBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Status Modal -->
+<div class="modal-overlay" id="addStatusModal">
+    <div class="add-status-modal">
+        <div class="add-status-header">
+            <button class="add-status-back-btn" id="addStatusBackBtn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h3>Add Status</h3>
+            <button class="add-status-post-btn" id="addStatusPostBtn">Post</button>
+        </div>
+        <div class="add-status-content">
+            <div class="status-type-selector">
+                <button class="status-type-btn active" data-type="text">
+                    <i class="fas fa-font"></i>
+                    Text
+                </button>
+                <button class="status-type-btn" data-type="photo">
+                    <i class="fas fa-camera"></i>
+                    Photo
+                </button>
+                <button class="status-type-btn" data-type="video">
+                    <i class="fas fa-video"></i>
+                    Video
+                </button>
+            </div>
+            <div class="status-input-container">
+                <div class="text-status-input" id="textStatusInput">
+                    <textarea placeholder="Type a status..." id="statusTextArea"></textarea>
+                    <div class="status-background-selector">
+                        <div class="bg-option active" data-bg="default" style="background: linear-gradient(45deg, #25d366, #128c7e);"></div>
+                        <div class="bg-option" data-bg="blue" style="background: linear-gradient(45deg, #3498db, #2980b9);"></div>
+                        <div class="bg-option" data-bg="purple" style="background: linear-gradient(45deg, #9b59b6, #8e44ad);"></div>
+                        <div class="bg-option" data-bg="orange" style="background: linear-gradient(45deg, #e67e22, #d35400);"></div>
+                        <div class="bg-option" data-bg="red" style="background: linear-gradient(45deg, #e74c3c, #c0392b);"></div>
+                        <div class="bg-option" data-bg="pink" style="background: linear-gradient(45deg, #f39c12, #e67e22);"></div>
+                    </div>
+                </div>
+                <div class="media-status-input" id="mediaStatusInput" style="display: none;">
+                    <div class="media-upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Select a photo or video</p>
+                        <input type="file" id="statusMediaInput" accept="image/*,video/*">
+                        <button class="select-media-btn">Choose File</button>
+                    </div>
+                    <div class="media-preview" id="mediaPreview" style="display: none;">
+                        <div class="media-preview-content" id="mediaPreviewContent"></div>
+                        <button class="remove-media-btn" id="removeMediaBtn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Call Modal -->
+<div class="modal-overlay" id="callModal">
+    <div class="call-interface">
+        <div class="call-header">
+            <div class="call-info">
+                <div class="call-avatar" id="callAvatar"></div>
+                <div class="call-details">
+                    <div class="call-name" id="callName">John Doe</div>
+                    <div class="call-status" id="callStatus">Calling...</div>
+                </div>
+            </div>
+            <div class="call-timer" id="callTimer" style="display: none;">00:00</div>
+        </div>
+        
+        <div class="call-video-container" id="callVideoContainer" style="display: none;">
+            <video id="localVideo" autoplay muted playsinline></video>
+            <video id="remoteVideo" autoplay playsinline></video>
+            <div class="video-controls">
+                <button class="video-toggle-btn" id="cameraToggleBtn" title="Turn camera off">
+                    <i class="fas fa-video"></i>
+                </button>
+                <button class="video-toggle-btn" id="switchCameraBtn" title="Switch camera">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="call-controls">
+            <button class="call-btn mute-btn" id="muteBtn" title="Mute">
+                <i class="fas fa-microphone"></i>
+            </button>
+            
+            <button class="call-btn speaker-btn" id="speakerBtn" title="Speaker">
+                <i class="fas fa-volume-up"></i>
+            </button>
+            
+            <button class="call-btn video-btn" id="videoBtn" title="Turn on camera" style="display: none;">
+                <i class="fas fa-video"></i>
+            </button>
+            
+            <button class="call-btn end-call-btn" id="endCallBtn" title="End call">
+                <i class="fas fa-phone-slash"></i>
+            </button>
+            
+            <button class="call-btn add-call-btn" id="addCallBtn" title="Add participant">
+                <i class="fas fa-user-plus"></i>
+            </button>
+            
+            <button class="call-btn more-btn" id="moreCallBtn" title="More options">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+        </div>
+        
+        <div class="call-participants" id="callParticipants" style="display: none;">
+            <!-- Participants list for group calls -->
+        </div>
+    </div>
+</div>
+
+<!-- Incoming Call Modal -->
+<div class="modal-overlay" id="incomingCallModal" style="display: none;">
+    <div class="incoming-call-interface">
+        <div class="incoming-call-header">
+            <div class="incoming-call-info">
+                <div class="incoming-call-avatar" id="incomingCallAvatar"></div>
+                <div class="incoming-call-details">
+                    <div class="incoming-call-name" id="incomingCallName">Sarah Wilson</div>
+                    <div class="incoming-call-type" id="incomingCallType">RainChatify video call</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="incoming-call-controls">
+            <button class="incoming-call-btn decline-btn" id="declineCallBtn">
+                <i class="fas fa-phone-slash"></i>
+            </button>
+            <button class="incoming-call-btn accept-btn" id="acceptCallBtn">
+                <i class="fas fa-phone"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Call History Modal -->
+<div class="modal-overlay" id="callHistoryModal">
+    <div class="call-history-modal">
+        <div class="call-history-header">
+            <button class="call-history-back-btn" id="callHistoryBackBtn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h3>Calls</h3>
+            <button class="call-history-close-btn" id="callHistoryCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="call-history-content" id="callHistoryContent">
+            <!-- Call history will be loaded here -->
+        </div>
+    </div>
+</div>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
