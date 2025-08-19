@@ -1,3 +1,9 @@
+/* 
+Name                 : RainChatify – Free Unique Chat UI Template for Real-Time Messaging
+Author               : TemplateRise
+Url                  : https://www.templaterise.com/template/rainchatify-free-unique-chat-ui-template-for-real-time-messaging
+*/
+
 
 // Global variables
 const welcomeScreen = document.getElementById('welcomeScreen');
